@@ -17,6 +17,34 @@ html {
 
 .slider {
     padding: 20px 50px;
-    background-color:cadetblue;
 	overflow: hidden;
+    width: 720px;
+    height: 1280px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slides {
+    width: inherit;
+    height: inherit;
+}
+
+.slide1 {
+    background-image: url(/cssMemeSlider/cssMemeSlider/img/1.jpg);
+}
+
+.slide2 {
+    background-image: url(/cssMemeSlider/cssMemeSlider/img/2.jpg);
+}
+
+.slide3 {
+    background-image: url(/cssMemeSlider/cssMemeSlider/img/3.jpg);
+}
+
+.slide4 {
+    background-image: url(/cssMemeSlider/cssMemeSlider/img/4.jpg);
+}
+
+.slide5 {
+    background-image: url(/cssMemeSlider/cssMemeSlider/img/5.jpg);
 }
