@@ -1,0 +1,22 @@
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    background-image: url(/cssMemeSlider/cssMemeSlider/img/blue-wall-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slider {
+    padding: 20px 50px;
+    background-color:cadetblue;
+	overflow: hidden;
+}
