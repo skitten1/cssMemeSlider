@@ -13,15 +13,37 @@ html {
     background-image: url(/cssMemeSlider/cssMemeSlider/img/blue-wall-background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
 }
 
 .slider {
+    display: flex;
     padding: 20px 50px;
 	overflow: hidden;
     width: 720px;
     height: 1280px;
     background-size: cover;
     background-repeat: no-repeat;
+    order: 0;
+}
+
+span {
+    width: 5rem;
+    height: 5rem;
+    background-color: blue;
+    border-radius: 50px;
+}
+
+.text {
+    display: flex;
+    cursor: text;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 2rem;
+}
+
+p {
+    visibility: hidden;
 }
 
 .slides {
@@ -31,20 +53,48 @@ html {
 
 .slide1 {
     background-image: url(/cssMemeSlider/cssMemeSlider/img/1.jpg);
+    margin-left: -100%;
+    opacity: 0;
 }
 
 .slide2 {
     background-image: url(/cssMemeSlider/cssMemeSlider/img/2.jpg);
+    margin-left: -100%;
+    opacity: 0;
 }
 
 .slide3 {
     background-image: url(/cssMemeSlider/cssMemeSlider/img/3.jpg);
+    margin-left: -100%;
+    opacity: 0;
 }
 
 .slide4 {
     background-image: url(/cssMemeSlider/cssMemeSlider/img/4.jpg);
+    margin-left: -100%;
+    opacity: 0;
 }
 
 .slide5 {
     background-image: url(/cssMemeSlider/cssMemeSlider/img/5.jpg);
+    margin-left: -100%;
+    opacity: 0;
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+    margin-left: 0;
+    opacity: 1;
+    transition: transform ease-in-out .7s, opacity ease-in-out .7s
+}
+
+#slide1:checked ~ .text > .text1,
+#slide2:checked ~ .text > .text2,
+#slide3:checked ~ .text > .text3,
+#slide4:checked ~ .text > .text4,
+#slide5:checked ~ .text > .text5 {
+    visibility: visible;
 }
