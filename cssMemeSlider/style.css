@@ -2,12 +2,14 @@
     font-family: "IBM";
     font-style: normal;
     font-weight: 400;
-    src: url(/cssMemeSlider/cssMemeSlider/font/IBMPlexMono-Regular.ttf)
+    src: url(/cssMemeSlider/cssMemeSlider/font/IBMPlexMono-Bold.ttf)
 }
 
 html {
     scroll-behavior: smooth;
     font-size: 10px;
+    background-image: url(/cssMemeSlider/cssMemeSlider/img/blue-wall-background.jpg);
+    background-size: cover;
 }
 
 * {
@@ -17,9 +19,6 @@ html {
 }
 
 .wrapper {
-    background-image: url(/cssMemeSlider/cssMemeSlider/img/blue-wall-background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,6 +29,10 @@ html {
     justify-content: space-between;
     flex-direction: row-reverse;
     padding: 0 10% 10%;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .slider {
@@ -47,7 +50,7 @@ span {
     width: 2rem;
     height: 2rem;
     margin: 0.5rem;
-    background-color: blue;
+    border: solid blue;
     border-radius: 50px;
 }
 
@@ -57,13 +60,14 @@ span {
 
 .text {
     display: flex;
+    flex-direction: column;
     cursor: text;
     font-family: "IBM", sans-serif;
-    font-size: 2rem;
 }
 
 p {
     visibility: hidden;
+    font-size: 0;
 }
 
 .slides {
@@ -83,7 +87,7 @@ p {
 #slide5:checked ~ .slider > .slide5 {
     margin-left: 0;
     opacity: 1;
-    transition: transform ease-in-out .7s, opacity ease-in-out .7s
+    transition: transform ease-in-out 1s, opacity ease-in-out 1s
 }
 
 #slide1:checked ~ .wrapper2 > .text > .text1,
@@ -92,4 +96,13 @@ p {
 #slide4:checked ~ .wrapper2 > .text > .text4,
 #slide5:checked ~ .wrapper2 > .text > .text5 {
     visibility: visible;
+    font-size: 4rem;
+    transition: all 1s;
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+        text-align: center;
+    }
 }
