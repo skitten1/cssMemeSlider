@@ -1,6 +1,15 @@
+@font-face {
+    font-family: "IBM";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/cssMemeSlider/cssMemeSlider/font/IBMPlexMono-Bold.ttf)
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 10px;
+    background-image: url(/cssMemeSlider/cssMemeSlider/img/blue-wall-background.jpg);
+    background-size: cover;
 }
 
 * {
@@ -10,13 +19,111 @@ html {
 }
 
 .wrapper {
-    background-image: url(/cssMemeSlider/cssMemeSlider/img/blue-wall-background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapper2 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 2% 10% 10%;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 }
 
 .slider {
-    padding: 20px 50px;
-    background-color:cadetblue;
+    display: flex;
+    padding: 5% 10% 0;
 	overflow: hidden;
+}
+
+input {
+    display: none;
+}
+
+span {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    margin: 0.5rem;
+    border: solid #483D8B;
+    background-color: #483D8B;
+    border-radius: 50px;
+}
+
+.labels {
+    display: flex;
+    @media (max-width: 768px) {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2% 0 2%;
+    }
+}
+
+label:hover {
+    cursor: pointer;
+    span {
+        background-color: aquamarine;
+        transition: all 0.5s;
+    }
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    cursor: text;
+    font-family: "IBM", sans-serif;
+}
+
+p {
+    visibility: hidden;
+    font-size: 0;
+}
+
+.slides {
+    width: 100%;
+}
+
+.slide1, .slide2, .slide3, .slide4, .slide5 {
+    margin-left: -100%;
+    opacity: 0;
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+    margin-left: 0;
+    opacity: 1;
+    transition: all ease-in-out 1.2s;
+}
+
+#slide1:checked ~ .wrapper2 > .labels > label:nth-child(1) > span,
+#slide2:checked ~ .wrapper2 > .labels > label:nth-child(2) > span,
+#slide3:checked ~ .wrapper2 > .labels > label:nth-child(3) > span,
+#slide4:checked ~ .wrapper2 > .labels > label:nth-child(4) > span,
+#slide5:checked ~ .wrapper2 > .labels > label:nth-child(5) > span {
+    background: none;
+    transition: all 1s;
+}
+
+#slide1:checked ~ .wrapper2 > .text > .text1,
+#slide2:checked ~ .wrapper2 > .text > .text2,
+#slide3:checked ~ .wrapper2 > .text > .text3,
+#slide4:checked ~ .wrapper2 > .text > .text4,
+#slide5:checked ~ .wrapper2 > .text > .text5 {
+    visibility: visible;
+    font-size: 3.2rem;
+    transition: all 1s;
+    @media (max-width: 768px) {
+        font-size: 3rem;
+        text-align: left;
+    }
+    @media (max-width: 320px) {
+        font-size: 1.5rem;
+    }
 }
