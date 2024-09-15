@@ -67,6 +67,7 @@ label:hover {
     cursor: pointer;
     span {
         background-color: aquamarine;
+        transition: all 0.5s;
     }
 }
 
@@ -84,7 +85,6 @@ p {
 
 .slides {
     width: 100%;
-    height: 100%;
 }
 
 .slide1, .slide2, .slide3, .slide4, .slide5 {
@@ -99,7 +99,7 @@ p {
 #slide5:checked ~ .slider > .slide5 {
     margin-left: 0;
     opacity: 1;
-    transition: transform ease-in-out 1s, opacity ease-in-out 1.2s
+    transition: all ease-in-out 1.2s;
 }
 
 #slide1:checked ~ .wrapper2 > .labels > label:nth-child(1) > span,
@@ -108,6 +108,7 @@ p {
 #slide4:checked ~ .wrapper2 > .labels > label:nth-child(4) > span,
 #slide5:checked ~ .wrapper2 > .labels > label:nth-child(5) > span {
     background: none;
+    transition: all 1s;
 }
 
 #slide1:checked ~ .wrapper2 > .text > .text1,
